@@ -1,0 +1,9 @@
+name = "onchain-logger-frontend"
+compatibility_date = "2024-11-28"
+
+[env.production]
+name = "onchain-logger-frontend"
+
+[env.preview]
+name = "onchain-logger-frontend-preview"
+

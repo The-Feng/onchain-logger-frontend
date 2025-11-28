@@ -16,12 +16,11 @@ export function LogWriter({ onError, onSuccess }: LogWriterProps) {
   const [message, setMessage] = useState("这是一条测试日志，用于验证链上事件写入和查询功能");
   const [metadata, setMetadata] = useState('{"timestamp":"' + new Date().toISOString() + '","source":"frontend","test":true}');
   const [txHash, setTxHash] = useState<`0x${string}` | undefined>();
-  const successShownRef = useRef<string | undefined>();
+  const successShownRef = useRef<string | undefined>(undefined);
 
   const {
     writeContractAsync,
     isPending,
-    error: writeError,
   } = useWriteContract();
 
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash: txHash });
